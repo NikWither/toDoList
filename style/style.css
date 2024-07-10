@@ -1,0 +1,235 @@
+body {
+  background-color: aliceblue;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 25px;
+}
+
+.hide {
+  display: none;
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+}
+
+.search__input {
+  width: 560px;
+
+  padding: 15px 25px;
+  background-color: rgb(158, 180, 35);
+  color: white;
+  font-size: 28px;
+  font-weight: 600;
+  border: 2.5px solid black;
+}
+
+.addTask {
+  margin-top: 20px;
+}
+
+.addTask__input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.addTask__tasks {
+  width: 450px;
+
+  padding: 15px 25px;
+  background-color: coral;
+  color: white;
+  font-size: 28px;
+  font-weight: 600;
+  border-radius: 25px;
+  border: 2px solid black;
+}
+
+.addTask__tasks::placeholder {
+  color: white;
+}
+
+.addTask__add-btn {
+  margin-left: 15px;
+  padding: 12px 14px;
+  background-color: rgb(160, 216, 143);
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  border: 1.5px solid black;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.filter {
+  display: flex;
+}
+
+.tasks {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.task {
+  
+  margin-top: 20px;
+
+  width: 300px;
+  padding: 8px 20px;
+  border: 1px solid black;
+  border-radius: 25px;
+
+  background-color: cornsilk;
+
+  color: rgb(247, 118, 72);
+}
+
+.active {
+  background-color: aliceblue;
+  
+  color: rgb(0, 0, 0);
+}
+
+.favourite {
+  background-color: red;
+
+}
+
+.task__title {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+.task__title input {
+  width: 30px;
+  cursor: pointer;
+}
+
+.task a {
+  color: black;
+  text-decoration: none;
+
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  line-height: normal;
+}
+
+.btn__edit {
+  padding: 6px 10px;
+  background-color: white;
+  border: 1.5px solid rgb(252, 232, 155);
+}
+
+.btn__delete {
+  padding: 6px 10px;
+  background-color: white;
+  border: 1.5px solid rgb(252, 232, 155);
+}
+
+.btn__favourite {
+  padding: 6px 10px;
+  background-color: white;
+  border: 1.5px solid rgb(252, 232, 155);
+}
+
+.favourite {
+  background-color: coral;
+  color: white;
+}
+
+/* Settings */
+
+.settings {
+  margin-top: 15px;
+}
+
+.settings__form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 15px;
+}
+
+.settings__filter {
+  display: flex;
+  flex-direction: column;
+}
+
+.settings__filter p {
+  margin: 0;
+}
+
+
+/* MODULE WINDOW */
+
+.modal__window {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 99998;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto; /* ЕСЛИ КОНТЕНТ ВНУТРИ ОКНА НЕ БУДЕТ УМЕЩАТЬСЯ, ТО ПОЯВИТЬСЯ ВОЗМОЖНОСТЬ СКРОЛИТЬ ЕГО */
+  visibility: hidden;
+  opacity: 0;
+  /* ДОБАВЛЕНИЕ АНИМАЦИИ */
+  transition: opacity 0.4s, visibility 0.4s;
+}
+
+.modal__box button {
+  position: absolute;
+  padding: 5px;
+  top: 8px;
+  right: 8px;
+}
+
+.modal__box h2 {
+  padding-top: 10px;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.modal__box p {
+  padding-top: 15px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.modal__window.open {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal__box {
+  max-width: 750px;
+
+  margin: 30px 15px;
+  padding: 45px;
+
+  z-index: 1;
+  background-color: white;
+  box-shadow: 0px 0px 17px -7px rgba(34, 60, 80, 0.2);
+  color: #121212;
+  /* АНИМАЦИЯ */
+  transform: scale(0);
+  transition: transform 0.8s;
+}
+
+.modal__window.open .modal__box {
+  transform: scale(1);
+}
